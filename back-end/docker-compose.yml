@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  consulti-template-springboot:
+    image: "erickespinozat/consulti-template-springboot:latest"
+    container_name: consulti-template-springboot
+    hostname: "consulti-template-springboot"
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src/main/resources/application.properties:/usr/app/application.properties

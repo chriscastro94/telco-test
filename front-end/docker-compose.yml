@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  consulti-template-angular:
+    image: erickespinozat/consulti-template-angular:latest
+    container_name: consulti-template-angular
+    ports:
+      - "80:80"
+    volumes:
+      - ./logs:/var/log/nginx

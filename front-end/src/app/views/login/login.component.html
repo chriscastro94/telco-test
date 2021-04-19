@@ -1,0 +1,58 @@
+<ngx-spinner bdColor="rgba(0,0,0,0.88)" size="medium" [name]="login_spinner" color="#fff"
+  type="timer" [fullScreen]="true">
+  <p style="color: white"> Cargando...</p>
+</ngx-spinner>
+
+<div class="app-body">
+  <main class="main d-flex align-items-center loginBack">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="authLogin()">
+                
+                  <p class="text-muted">Ingresa con tu cuenta</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+
+                    <input class="form-control" id="userName" autocomplete="on" type="text" formControlName="userName"
+                      placeholder="Email" required
+                      [ngClass]="{ 'is-invalid': loginSubmitted && f.userName.errors , 'is-valid': (f.userName.touched || f.userName.dirty )  && !f.userName.errors }" />
+                    <div *ngIf="loginSubmitted && f['userName'].errors" class="invalid-feedback">
+                      <div *ngIf="f['userName'].errors.required">{{loginFormErrors.email.required}}</div>
+                      <div *ngIf="f['userName'].errors.email">{{loginFormErrors.email.email}}</div>
+                    </div>
+
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input class="form-control" id="password" type="password" formControlName="password"
+                      placeholder="Contraseña" required
+                      [ngClass]="{ 'is-invalid': loginSubmitted && f.password.errors , 'is-valid': f.password.touched && !f.password.errors }" />
+                    <div *ngIf="loginSubmitted && f['password'].errors" class="invalid-feedback">
+                      <div *ngIf="f['password'].errors.required">{{loginFormErrors.password.required}}</div>
+                    </div>
+                  </div>
+                  <div class="row text-center">
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary px-4 mainColorButton">Login</button>
+                    </div>
+                    <!--<div class="col-6 text-right">
+                      <button type="button" class="btn btn-link px-0">¿Olvidaste tu contraseña?</button>
+                    </div>-->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

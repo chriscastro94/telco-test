@@ -1,0 +1,44 @@
+
+
+// If you want to override variables do it here
+/*@import "variables";
+
+//@import '../node_modules/bootstrap/scss/bootstrap';
+@import "node_modules/@coreui/coreui-pro/scss/bootstrap";
+@import "~@coreui/coreui-pro/scss/coreui";
+
+// Import styles with dark layout
+// If you want to use dark layout uncomment next line
+//@import "~@coreui/coreui-pro/scss/themes/dark/coreui-dark";
+
+
+
+@import "datatable";
+
+// Import styles
+//@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+@import "./src/scss/vendors/ng-select/ng-select.scss";
+//@import "./src/scss/vendors/ng-select/ng-select.scss";*/
+
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles with default layout.
+// If you are going to use dark layout please comment next line
+@import "~@coreui/coreui-pro/scss/coreui";
+
+// Import styles with dark layout
+// If you want to use dark layout uncomment next line
+//@import "~@coreui/coreui-pro/scss/themes/dark/coreui-dark";
+
+// If you want to add something do it here
+@import "custom";
+@import "datatable";
+@import "toast";
+// regular style toast
+@import '~ngx-toastr/toastr';
+
